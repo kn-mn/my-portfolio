@@ -2,7 +2,7 @@ const toggleButtons = document.querySelectorAll('.project-toggle');
 const contactForm = document.getElementById('contactForm');
 
 
-// Event Listeners
+//
 contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -28,8 +28,8 @@ toggleButtons.forEach(button => {
 
 //
 var typed = new Typed('#typed', {
-  strings: ['Web Developer', 'Project Manager', 'Freelancer'],
-  typeSpeed: 50,
-  backSpeed: 25,
+  strings: ['knmn', 'Web Developer', 'Project Manager'],
+  typeSpeed: 40,
+  backSpeed: 40,
   loop: true
 });

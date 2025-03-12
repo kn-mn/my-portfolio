@@ -96,6 +96,7 @@ footer {
 
 #typed {
     min-height: 1.5em;
+    display: inline-block;
   }
 
 .projects-container {
