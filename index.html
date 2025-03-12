@@ -6,6 +6,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
     <header>
@@ -22,6 +23,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p>This is where you’ll write a short bio about yourself. Who are you? What are your interests? What have you done so far in your journey?</p>
+        <p id="typed">knmn</p>
     </section>
 
     <section id="projects">
@@ -53,7 +55,22 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>In the future, this will be a contact form. For now, just leave this as a placeholder.</p>
+        <form id="contactForm">
+            <label for="name">Name:*</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:*</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:*</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:*</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
     </section>
 
     <footer>
