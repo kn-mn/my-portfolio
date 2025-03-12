@@ -80,24 +80,29 @@ footer {
 
 .projects-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    
-}
+  }
 
-.project {
+  .project {
+    flex: auto;
+    box-sizing: border-box;
     border: 1px solid black;
     padding: 5px;
     margin: 5px;
     text-align: center;
-}
-
-.project-details {
-    display: none;
-}
-
-.project-details.show {
-    display: block;
+    transition: all 0.3s;
   }
+
+  .project-details {
+    display: none;
+    max-height: 200px; 
+    overflow: auto;
+  }
+  
+  .project-details.show {
+    display: block;
+  }  
 
 .project-toggle{
     cursor: pointer;
