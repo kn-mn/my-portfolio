@@ -77,3 +77,24 @@ footer {
         margin: 10px;
     }
 }
+
+.projects-container {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.project {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.project-details {
+    display: none;
+}
+
+.project-toggle{
+    cursor: pointer;
+}
