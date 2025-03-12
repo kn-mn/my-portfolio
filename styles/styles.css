@@ -95,6 +95,11 @@ footer {
     display: none;
 }
 
+.project-details.show {
+    display: block;
+  }
+  
+
 .project-toggle{
     cursor: pointer;
 }
