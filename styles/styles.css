@@ -85,7 +85,7 @@ footer {
   }
 
   .project {
-    flex: auto;
+    flex: 1 1 300px;
     box-sizing: border-box;
     border: 1px solid black;
     padding: 5px;
