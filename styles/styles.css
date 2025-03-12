@@ -94,6 +94,12 @@ footer {
     }
 } */
 
+#about {
+    justify-content: space-between;
+    align-items: center;
+    min-height: 220px;
+}
+
 #typed {
     min-height: 1.5em;
     display: inline-block;
