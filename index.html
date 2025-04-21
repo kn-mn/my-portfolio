@@ -8,7 +8,7 @@
     <title>knmn Portfolio</title>
 
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/png" href="favicon.png?" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <script src="scripts/script.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -16,14 +16,17 @@
 <body>
     <header>
         <h1>knmn</h1>
+      
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
 <!-- About -->
     <section id="about">
         <h2>About Me</h2>
@@ -35,24 +38,32 @@
         <h2 class="my-projects">My Projects</h2>
         <div class="projects-container">
            <div class="project">
-             <h3>Project 1</h3>
+             <h3>Track My Run</h3>
                 <button class="project-toggle">Show Details</button>
                     <div class="project-details">
-                          <p>Here’s where you’ll showcase your projects. You can include a brief description of each project and a link to the live version or the project’s repository.</p>
+                          <p>Completed as part of a group assignment with Humber classmates. Created a simple website that produces a training plan for runners, using three simple inputs - distance, goal time, and target date.</p>
+                        <div class="project-links">
+                            <a href="https://humber-2025cpan113-group9.github.io/track-my-run/" aria-label="Live site">
+                            <img src="images/external-link.svg" alt="" class="icon"></a>
+                            <a href="https://github.com/humber-2025cpan113-group9/track-my-run" aria-label="GitHub repo">
+                            <img src="images/github.svg" alt="" class="icon"></a>
                         </div>
                 </div>
             <div class="project">
-                <h3>Project 2</h3>
+                <h3>Dynamic Blog Website</h3>
                     <button class="project-toggle">Show Details</button>
                         <div class="project-details">
                             <p>Here’s where you’ll showcase your projects. You can include a brief description of each project and a link to the live version or the project’s repository.</p>
+                            <a class="project-links" href="https://kn-mn.github.io/dynamic-blog-website/">Website</a>
+                            <a class="project-links" href="https://github.com/kn-mn/dynamic-blog-website">GitHub Repo</a>
                         </div>
                 </div>
             <div class="project">
-                <h3>Project 3</h3>
-                    <button class="project-toggle">Show Details</button>
-                        <div class="project-details">
-                            <p>Here’s where you’ll showcase your projects. You can include a brief description of each project and a link to the live version or the project’s repository.</p>
+                <h3>Personal Website</h3>
+                <button class="project-toggle">Show Details</button>
+                    <div class="project-details">
+                            <p>Personal WordPress website.</p>
+                            <a class="project-links" href="https://leungc.com/">WordPress</a>
                         </div>
                 </div>
             </div>
