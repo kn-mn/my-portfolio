@@ -8,7 +8,7 @@
     <title>knmn Portfolio</title>
 
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <script src="scripts/script.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -36,9 +36,15 @@
 <!-- Projects -->
     <section id="projects">
         <h2 class="my-projects">My Projects</h2>
+        <div class="filter-container">
+            <label><input type="checkbox" value="html"> HTML</label>
+            <label><input type="checkbox" value="css"> CSS</label>
+            <label><input type="checkbox" value="javascript"> JavaScript</label>
+            <label><input type="checkbox" value="wordpress"> WordPress</label>
+        </div>
         <div class="projects-container">
-           <div class="project">
-             <h3>Track My Run</h3>
+        <div class="project" data-tags="html css javascript">
+            <h3>Track My Run</h3>
                 <button class="project-toggle">Show Details</button>
                     <div class="project-details">
                           <p>Completed as part of a group assignment with Humber classmates. Created a simple website that produces a training plan for runners, using three simple inputs - distance, goal time, and target date.</p>
@@ -50,7 +56,7 @@
                         </div>
                 </div>
             </div>
-            <div class="project">
+            <div class="project" data-tags="javascript ">
                 <h3>Dynamic Blog Website</h3>
                     <button class="project-toggle">Show Details</button>
                         <div class="project-details">
@@ -63,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-            <div class="project">
+            <div class="project" data-tags="wordpress">
                 <h3>Personal Website</h3>
                 <button class="project-toggle">Show Details</button>
                     <div class="project-details">
@@ -78,7 +84,7 @@
 <!-- Contact -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xgvkwpyo" method="POST">
             <label for="name">Name<sup>*</sup>:</label>
             <input type="text" id="name" name="name" required>
 
