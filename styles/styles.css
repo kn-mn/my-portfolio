@@ -24,6 +24,19 @@ body {
     padding-bottom: 80px; 
 }
 
+a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
 header {
     display: flex;
     background-color: var(--dark-color);
