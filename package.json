@@ -5,7 +5,9 @@
   "scripts": {
     "minify:css": "cssnano styles/styles.css styles/styles.min.css",
     "minify:js": "uglifyjs scripts/script.js -o scripts/script.min.js --compress --mangle",
-    "build": "npm run minify:css && npm run minify:js"
+    "build": "npm run minify:css && npm run minify:js",
+    "watch:css": "nodemon --watch styles/styles.css --exec \"npm run minify:css\"",
+    "watch:js":  "nodemon --watch scripts/script.js  --exec \"npm run minify:js\""
   },
   "repository": {
     "type": "git",

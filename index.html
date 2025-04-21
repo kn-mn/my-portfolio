@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="styles/styles.min.css">
     <script src="scripts/script.min.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>knmn</h1>
       
         <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-      
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+              
         <nav>
           <ul>
             <li><a href="#about">About</a></li>
@@ -25,13 +27,20 @@
         </nav>
       </header>
 <!-- About -->
-    <section id="about">
+<section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>knmn</h1>
+      <p class="hero-tagline">Web Developer & Technical Project Manager</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+</section>
+<section id="about" class="container">
         <h2>About Me</h2>
         <p>I am a <a href="https://www.credly.com/badges/57eb48e3-3d35-42d8-b038-498597383461/public_url">CAPM</a> Project Manager, wth extensive experience across diverse inustries. My current expertise is primariliy within the domains of digital media campaigns, integrated marketing strategies, and large-scale event management, where I am known for aligning operational efficiency with strategic business goals to deliver meaningful results. I am currently studying Computer Programming at Humber College, where I hope to stremgthen my knowledge and skills in software development in pursuit of my apsiration of becoming a Technical PM.</p>
         <p id="typed"></p>
-    </section>
+</section>
 <!-- Projects -->
-    <section id="projects">
+    <section id="projects" class="container">
         <h2 class="my-projects">My Projects</h2>
         <div class="filter-container">
             <label><input type="checkbox" value="html"> HTML</label>
@@ -75,15 +84,16 @@
                                 <a href="https://wordpress.url" aria-label="WordPress site">
                                 <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/wordpress.svg" alt="wordpress logo" class="icon" loading="lazy"></a> 
                         </div>
+                    </div>
                 </div>
             </div>
     </section>
 <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="container">
         <h2>Contact Me</h2>
         <form id="contactForm" action="https://formspree.io/f/xgvkwpyo" method="POST">
             
-            <input type="text" name="_practice" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
             
             <label for="name">Name<sup>*</sup>:</label>
             <input type="text" id="name" name="name" required>

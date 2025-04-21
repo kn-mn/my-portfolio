@@ -1,4 +1,25 @@
+// DARK MODE
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+if (localStorage.getItem('theme') === 'dark') {
+  root.setAttribute('data-theme', 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  if (root.getAttribute('data-theme') === 'dark') {
+    root.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    root.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
+// PROJECTS
 const toggleButtons = document.querySelectorAll('.project-toggle');
+
+// CONTACT FORM
 const contactForm = document.getElementById('contactForm');
 
 
@@ -15,7 +36,7 @@ contactForm.addEventListener('submit', function(e) {
   })
   .then(response => {
     if (response.ok) {
-      alert('Thanks! Your message was sent.');
+      alert('Your message was sent.');
       contactForm.reset();
     } else {
       return response.json().then(err => Promise.reject(err));
@@ -23,7 +44,7 @@ contactForm.addEventListener('submit', function(e) {
   })
   .catch(err => {
     console.error('Form submission error:', err);
-    alert('Oops—there was a problem sending your message.');
+    alert('There was a problem sending your message.');
   });
 });
 
