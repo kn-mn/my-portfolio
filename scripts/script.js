@@ -33,3 +33,30 @@ var typed = new Typed('#typed', {
   backSpeed: 40,
   loop: true
 });
+
+
+// 
+const menuToggle = document.querySelector('.menu-toggle');
+const nav        = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+document.querySelectorAll('header nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+});
+
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+ });
