@@ -45,12 +45,21 @@ a:hover {
 
 header {
     display: flex;
-    background-color: var(--dark-color);
-    color: white;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
     padding: 20px;
-}
+  }
+  
+  header .menu-toggle,
+  header #theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  
 
 /* DARK MODE */
 
@@ -371,9 +380,17 @@ button, .project-toggle {
     transform: translateY(2px);
 }
 
+.container > section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 40px 0;
+    padding: 20px;
+  }
+
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 40px 20px;
   }
 
