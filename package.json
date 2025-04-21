@@ -1,0 +1,29 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "minify:css": "cssnano styles/styles.css styles/styles.min.css",
+    "minify:js": "uglifyjs scripts/script.js -o scripts/script.min.js --compress --mangle",
+    "build": "npm run minify:css && npm run minify:js",
+    "watch:css": "nodemon --watch styles --ext css --exec \"npm run minify:css\"",
+    "watch:js": "nodemon --watch scripts --ext js --exec \"npm run minify:js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kn-mn/my-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kn-mn/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/kn-mn/my-portfolio#readme",
+  "description": "",
+  "dependencies": {
+    "cssnano-cli": "^1.0.5",
+    "nodemon": "^3.1.9",
+    "uglify-js": "^3.19.3"
+  }
+}

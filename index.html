@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>knmn Portfolio</title>
-
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
-
-    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <script src="scripts/script.min.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
@@ -30,7 +27,7 @@
 <!-- About -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a <a href="https://www.credly.com/badges/57eb48e3-3d35-42d8-b038-498597383461/public_url">CAPM</a> Project Manager and aspriing Technical PM, wth extensive experience across diverse inustries. My current expertise is primariliy within the domains of digital media campaigns, integrated marketing strategies, and large-scale event management, where I am known for aligning operational efficiency with strategic business goals to deliver meaningful results. I am currently studying Computer Programming at Humber College, where I hope to stremgthen my knowledge and skills in software development in pursuit of my aspirations.</p>
+        <p>I am a <a href="https://www.credly.com/badges/57eb48e3-3d35-42d8-b038-498597383461/public_url">CAPM</a> Project Manager, wth extensive experience across diverse inustries. My current expertise is primariliy within the domains of digital media campaigns, integrated marketing strategies, and large-scale event management, where I am known for aligning operational efficiency with strategic business goals to deliver meaningful results. I am currently studying Computer Programming at Humber College, where I hope to stremgthen my knowledge and skills in software development in pursuit of my apsiration of becoming a Technical PM.</p>
         <p id="typed"></p>
     </section>
 <!-- Projects -->
@@ -85,6 +82,9 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <form id="contactForm" action="https://formspree.io/f/xgvkwpyo" method="POST">
+            
+            <input type="text" name="_practice" tabindex="-1" autocomplete="off" style="display:none">
+            
             <label for="name">Name<sup>*</sup>:</label>
             <input type="text" id="name" name="name" required>
 
