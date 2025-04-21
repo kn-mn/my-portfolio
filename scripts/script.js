@@ -3,20 +3,30 @@ const contactForm = document.getElementById('contactForm');
 
 
 // Form Validation
-contactForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
 
-    const nameValue = document.getElementById('name').value;
-    const emailValue = document.getElementById('email').value;
-    const subjectValue = document.getElementById('subject').value;
-    const messageValue = document.getElementById('message').value;
+  const formData = new FormData(contactForm);
 
-    if (nameValue === '' || emailValue === '' || subjectValue === '' || messageValue === '') {
-        alert('Please fill out all fields.');
-      } else {
-        alert('Form submitted');
-      }
+  fetch(contactForm.action, {
+    method: contactForm.method,
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Thanks! Your message was sent.');
+      contactForm.reset();
+    } else {
+      return response.json().then(err => Promise.reject(err));
+    }
+  })
+  .catch(err => {
+    console.error('Form submission error:', err);
+    alert('Oops—there was a problem sending your message.');
   });
+});
+
 
 toggleButtons.forEach(button => {
   button.addEventListener('click', function() {
