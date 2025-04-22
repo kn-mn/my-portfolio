@@ -3,8 +3,15 @@
     --light-color: #d9d9d9;
     --dark-color: #3a3a3a; 
     --text-color: #222222;
-    --accent-color: #999999; 
-  }  
+    --accent: #999999;
+  }
+
+:root[data-theme="dark"] {
+    --bg-light: #222;
+    --bg-dark:  #111;
+    --text-light: #f0f0f0;
+    --text-dark:  #ddd;
+  }
   
 * {
     box-sizing: border-box;
@@ -12,25 +19,107 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 100%;
   }
 
-body {
-    font-family: monospace;
+  html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: var(--light-color);
-    color: var(--text-color);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
     line-height: 1.6;
-    padding-bottom: 80px; 
+  }
+  h1 { font-size: 2.25rem;}
+  h2 { font-size: 1.5rem;}
+  p  { font-size: 1rem;}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+a, a:visited {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
 }
 
 header {
     display: flex;
-    background-color: var(--dark-color);
-    color: white;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
     padding: 20px;
+  }
+  
+  header .menu-toggle,
+  header #theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+
+/* DARK MODE */
+body[data-theme="dark"] {
+    background: var(--bg-light);
+    color: var(--text-light);
+  }
+
+:root[data-theme="dark"] header, :root[data-theme="dark"] footer, :root[data-theme="dark"] .hero {
+    background: var(--bg-dark);
+    color: var(--text-light);
+  }
+
+  :root[data-theme="dark"] .btn {
+    background: var(--text-light);
+    color: var(--dark-color);
+  }
+
+  :root[data-theme="dark"] h1 {
+    color: var(--text-light);
+  }
+  :root[data-theme="dark"] h2 {
+    color: var(--text-light);
+  }
+
+  :root[data-theme="dark"] nav ul li a {
+    color: var(--text-light);
+  }
+
+/* HERO / HEADER / NAV */
+#hero {
+    margin: 0;
+    padding: 100px 20px;
+    background: var(--accent);
+    box-shadow: none;
+  }
+
+.hero-content h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+.hero-tagline {
+  font-size: 1.25rem;
+  margin: 20px 0;
 }
 
 header h1{
@@ -55,7 +144,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: bold;
 }
@@ -66,33 +155,24 @@ nav ul li a:hover {
     opacity: 0.8;
 }
 
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+/* SECTIONS */
 h2 {
     color: var(--dark-color);
     font-size: 1.5em;
 }
 
 footer {
-    background-color: var(--dark-color);
+    background: var(--dark-color);
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 10px 0;
 }
 
 .menu-toggle {
     display: none;
   }
-  
+
+/* DEVICE AND BROWSER SIZING */
 @media (max-width: 600px) {
     nav {
       display: none;
@@ -135,12 +215,12 @@ footer {
     }
   }
   
-  
-
+/* PROJECTS   */
 #about {
     justify-content: space-between;
     align-items: center;
     min-height: 230px;
+    text-align: center;
 }
 
 #typed {
@@ -149,9 +229,9 @@ footer {
   } 
 
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .project {
@@ -206,6 +286,40 @@ footer {
     background-color: var(--main-color);
 }
 
+button, .project-toggle {
+    transition: background-color 0.3s ease, transform 0.15s ease;
+}
+  button:hover, .project-toggle:hover {
+    transform: scale(1.05);
+}
+
+.project-links {
+    display: inline-flex;
+    margin: 5px;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-links:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.project-links .icon:hover {
+    transform: scale(1.1);
+}
+
+.project-links .icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    width: clamp(32px, 5vw, 48px);
+    height: clamp(32px, 5vw, 48px);
+}
+
+/* CONTACT FORM */
 #contact form {
     background-color: var(--light-color);
     padding: 20px;
@@ -265,35 +379,48 @@ footer {
     background-color: #bbb;
 }
 
-button, .project-toggle {
-    transition: background-color 0.3s ease, transform 0.15s ease;
-  }
-  button:hover, .project-toggle:hover {
-    transform: scale(1.05);
+/* CONTAINER */
+.filter-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+  .filter-container label {
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+.filter-container input {
+    margin-right: 4px;
+    transform: translateY(2px);
+}
+
+.container.section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 40px 0;
+    padding: 20px;
   }
 
-  .project-links {
-    display: inline-flex;
-    margin: 5px;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
-    gap: 8px;
-    margin-top: 10px;
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 20px;
   }
 
-  .project-links:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-    opacity: 1;
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background: var(--text-color);
+    color: var(--light-color);
+    padding: 0.75em 1.5em;
+    border-radius: 999px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
   }
-
-  .project-links .icon:hover {
-    transform: scale(1.1);
-  }
-
-  .project-links .icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    width: clamp(32px, 5vw, 48px);
-    height: clamp(32px, 5vw, 48px);
+  .btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
   }

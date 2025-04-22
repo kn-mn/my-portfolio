@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>knmn Portfolio</title>
-
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
-
-    <script src="scripts/script.js" defer></script>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="styles/styles.mini.css">
+    <script src="scripts/script.min.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="site-wrapper">
     <header>
         <h1>knmn</h1>
       
         <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-      
+        <button id="theme-toggle" aria-label="Toggle dark mode">⏻</button>
+              
         <nav>
           <ul>
             <li><a href="#about">About</a></li>
@@ -27,74 +27,93 @@
           </ul>
         </nav>
       </header>
+
 <!-- About -->
-    <section id="about">
+<section id="hero" class="hero">
+    <div class="container">
+    <div class="hero-content">
+    <h1>knmn</h1>
+      <p class="hero-tagline">Web Developer & Technical Project Manager</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+    </div>
+</section>
+<section id="about" class="container">
         <h2>About Me</h2>
-        <p>This is where you’ll write a short bio about yourself. Who are you? What are your interests? What have you done so far in your journey?</p>
+        <p>I am a <a href="https://www.credly.com/badges/57eb48e3-3d35-42d8-b038-498597383461/public_url">CAPM</a> Project Manager, with extensive experience across diverse industries. My current expertise is primarily within the domains of digital media campaigns, integrated marketing strategies, and large-scale event management, where I am known for aligning operational efficiency with strategic business goals to deliver meaningful results. I am currently studying Computer Programming at Humber College, where I hope to stremgthen my knowledge and skills in software development in pursuit of my apsiration of becoming a Technical PM.</p>
         <p id="typed"></p>
-    </section>
+</section>
 <!-- Projects -->
-    <section id="projects">
+    <section id="projects" class="container">
         <h2 class="my-projects">My Projects</h2>
+        <div class="filter-container">
+            <label><input type="checkbox" value="html"> HTML</label>
+            <label><input type="checkbox" value="css"> CSS</label>
+            <label><input type="checkbox" value="javascript"> JavaScript</label>
+            <label><input type="checkbox" value="wordpress"> WordPress</label>
+        </div>
         <div class="projects-container">
-           <div class="project">
-             <h3>Track My Run</h3>
+        <div class="project" data-tags="html css javascript">
+            <h3>Track My Run</h3>
                 <button class="project-toggle">Show Details</button>
                     <div class="project-details">
                           <p>Completed as part of a group assignment with Humber classmates. Created a simple website that produces a training plan for runners, using three simple inputs - distance, goal time, and target date.</p>
                         <div class="project-links">
                             <a href="https://humber-2025cpan113-group9.github.io/track-my-run/" aria-label="Live site">
-                            <img src="images/external-link.svg" alt="" class="icon"></a>
+                            <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/external-link.svg" alt="website link" class="icon" loading="lazy"></a>
                             <a href="https://github.com/humber-2025cpan113-group9/track-my-run" aria-label="GitHub repo">
-                            <img src="images/github.svg" alt="" class="icon"></a>
+                            <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/github.svg" alt="github logo" class="icon" loading="lazy"></a>
                         </div>
-                </div>
+                    </div>
             </div>
-            <div class="project">
+            <div class="project" data-tags="javascript ">
                 <h3>Dynamic Blog Website</h3>
                     <button class="project-toggle">Show Details</button>
                         <div class="project-details">
                             <p>A dynamic three page blog website with CRUD functionality, using LocalStorage.</p>
                         <div class="project-links">
                             <a href="https://kn-mn.github.io/dynamic-blog-website/" aria-label="Live site">
-                                <img src="images/external-link.svg" alt="" class="icon"></a>
+                                <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/external-link.svg" alt="website link" class="icon" loading="lazy"></a>
                                 <a href="https://github.com/kn-mn/dynamic-blog-website" aria-label="GitHub repo">
-                                <img src="images/github.svg" alt="" class="icon"></a>
+                                <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/github.svg" alt="github logo" class="icon" loading="lazy"></a>
                         </div>
                     </div>
                 </div>
-            <div class="project">
+            <div class="project" data-tags="wordpress">
                 <h3>Personal Website</h3>
                 <button class="project-toggle">Show Details</button>
                     <div class="project-details">
                             <p>Personal WordPress website.</p>
                         <div class="project-links">
-                                <a href="https://wordpress.url" aria-label="WordPress site">
-                                <img src="images/wordpress.svg" alt="" class="icon"></a> 
+                                <a href="https://leungc.com" aria-label="WordPress site">
+                                <img src="https://cdn.jsdelivr.net/gh/kn-mn/my-portfolio@main/images/wordpress.svg" alt="wordpress logo" class="icon" loading="lazy"></a> 
                         </div>
+                    </div>
                 </div>
             </div>
     </section>
 <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="container">
         <h2>Contact Me</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xgvkwpyo" method="POST">
+            
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+            
             <label for="name">Name<sup>*</sup>:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">Email<sup>*</sup>:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="subject">Subject<sup>*</sup>:</label>
-            <input type="text" id="subject" name="subject" required>
-
             <label for="message">Message<sup>*</sup>:</label>
             <textarea id="message" name="message" required></textarea>
 
             <button type="submit">Submit</button>
             <button type="reset">Reset</button>
+        
         </form>
     </section>
+</div>
 <!-- Footer -->
     <footer>
         <p>&copy; 2025 knmn</p>
