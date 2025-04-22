@@ -80,18 +80,7 @@ document.querySelectorAll('header nav a').forEach(link => {
   });
 });
 
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
- });
-
+// 
 const techCheckboxes = document.querySelectorAll('.filter-container input[type="checkbox"]');
 const projects = document.querySelectorAll('.project');
 

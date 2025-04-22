@@ -4,10 +4,13 @@
     --dark-color: #3a3a3a; 
     --text-color: #222222;
     --accent: #999999;
-    --bg-light: #f9f9f9;
-    --bg-dark:  #222;
-    --text-light: #fff;
-    --text-dark:  #222;
+  }
+
+:root[data-theme="dark"] {
+    --bg-light: #222;
+    --bg-dark:  #111;
+    --text-light: #f0f0f0;
+    --text-dark:  #ddd;
   }
   
 * {
@@ -70,33 +73,39 @@ header {
   header #theme-toggle {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color);
     font-size: 1.8em;
     cursor: pointer;
   }
 
 /* DARK MODE */
-:root[data-theme="dark"] {
-    --bg-light: #222;
-    --bg-dark:  #111;
-    --text-light: #f0f0f0;
-    --text-dark:  #ddd;
-  }
-  body[data-theme="dark"] {
+body[data-theme="dark"] {
     background: var(--bg-light);
     color: var(--text-light);
   }
-  header, footer, .hero {
+
+:root[data-theme="dark"] header, :root[data-theme="dark"] footer, :root[data-theme="dark"] .hero {
     background: var(--bg-dark);
     color: var(--text-light);
   }
+
   :root[data-theme="dark"] .btn {
     background: var(--text-light);
-    color: var(--accent);
+    color: var(--dark-color);
+  }
+
+  :root[data-theme="dark"] h1 {
+    color: var(--text-light);
+  }
+  :root[data-theme="dark"] h2 {
+    color: var(--text-light);
+  }
+
+  :root[data-theme="dark"] nav ul li a {
+    color: var(--text-light);
   }
 
 /* HERO / HEADER / NAV */
-
 #hero {
     margin: 0;
     padding: 100px 20px;
@@ -135,7 +144,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: bold;
 }
@@ -147,7 +156,6 @@ nav ul li a:hover {
 }
 
 /* SECTIONS */
-
 h2 {
     color: var(--dark-color);
     font-size: 1.5em;
@@ -165,7 +173,6 @@ footer {
   }
 
 /* DEVICE AND BROWSER SIZING */
-  
 @media (max-width: 600px) {
     nav {
       display: none;
@@ -209,11 +216,11 @@ footer {
   }
   
 /* PROJECTS   */
-
 #about {
     justify-content: space-between;
     align-items: center;
     min-height: 230px;
+    text-align: center;
 }
 
 #typed {
@@ -313,7 +320,6 @@ button, .project-toggle {
 }
 
 /* CONTACT FORM */
-
 #contact form {
     background-color: var(--light-color);
     padding: 20px;
@@ -374,7 +380,6 @@ button, .project-toggle {
 }
 
 /* CONTAINER */
-
 .filter-container {
     text-align: center;
     margin: 20px 0;
@@ -407,8 +412,8 @@ button, .project-toggle {
 /* BUTTONS */
 .btn {
     display: inline-block;
-    background: var(--text-light);
-    color: var(--accent);
+    background: var(--text-color);
+    color: var(--light-color);
     padding: 0.75em 1.5em;
     border-radius: 999px;
     font-weight: bold;
