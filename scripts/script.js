@@ -16,8 +16,23 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// PROJECTS
-const toggleButtons = document.querySelectorAll('.project-toggle');
+// PROJECT MODALS
+const modal      = document.getElementById('project-modal');
+const modalBody  = document.getElementById('modal-body');
+const modalClose = modal.querySelector('.modal-close');
+
+document.querySelectorAll('.project-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.nextElementSibling;
+    modalBody.innerHTML = details.innerHTML;
+    modal.classList.add('show');
+  });
+});
+
+modalClose.addEventListener('click', () => modal.classList.remove('show'));
+modal.addEventListener('click', e => {
+  if (e.target === modal) modal.classList.remove('show');
+});
 
 // CONTACT FORM
 const contactForm = document.getElementById('contactForm');
@@ -45,15 +60,6 @@ contactForm.addEventListener('submit', function(e) {
   .catch(err => {
     console.error('Form submission error:', err);
     alert('There was a problem sending your message.');
-  });
-});
-
-
-toggleButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const details = this.nextElementSibling;
-    
-    details.classList.toggle('show');
   });
 });
 
