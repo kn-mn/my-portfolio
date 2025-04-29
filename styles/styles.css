@@ -461,6 +461,7 @@ button, .project-toggle {
       max-height: 80%;
       overflow-y: auto;
       position: relative;
+      text-align: center;
     }
     .modal-close {
       position: absolute;
@@ -469,4 +470,8 @@ button, .project-toggle {
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+
+    .modal p{
+      color: var(--text-color);
     }
