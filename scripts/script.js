@@ -90,7 +90,7 @@ function applyTechFilter() {
     .map(cb => cb.value);
 
   projects.forEach(project => {
-    const tags = project.dataset.tags.trim().split(/\s+/);
+    const tags = project.dataset.tags.trim().split(/\+/);
     const visible = activeTags.length === 0
       || activeTags.every(tag => tags.includes(tag));
 

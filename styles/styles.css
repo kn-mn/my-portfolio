@@ -105,6 +105,14 @@ body[data-theme="dark"] {
     color: var(--text-light);
   }
 
+:root[data-theme="dark"] #theme-toggle {
+    color: var(--text-light);
+  }
+
+  :root[data-theme="dark"] #theme-toggle:hover {
+    color: var(--accent-color);
+  }
+
 /* HERO / HEADER / NAV */
 #hero {
     margin: 0;
