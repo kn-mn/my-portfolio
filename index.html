@@ -56,7 +56,7 @@
         <div class="project" data-tags="html css javascript">
             <h3>Track My Run</h3>
                 <button class="project-toggle">Show Details</button>
-                    <div class="project-details">
+                    <div class="project-details" hidden>
                           <p>Completed as part of a group assignment with Humber classmates. Created a simple website that produces a training plan for runners, using three simple inputs - distance, goal time, and target date.</p>
                         <div class="project-links">
                             <a href="https://humber-2025cpan113-group9.github.io/track-my-run/" aria-label="Live site">
@@ -69,7 +69,7 @@
             <div class="project" data-tags="javascript ">
                 <h3>Dynamic Blog Website</h3>
                     <button class="project-toggle">Show Details</button>
-                        <div class="project-details">
+                        <div class="project-details" hidden>
                             <p>A dynamic three page blog website with CRUD functionality, using LocalStorage.</p>
                         <div class="project-links">
                             <a href="https://kn-mn.github.io/dynamic-blog-website/" aria-label="Live site">
@@ -82,7 +82,7 @@
             <div class="project" data-tags="wordpress">
                 <h3>Personal Website</h3>
                 <button class="project-toggle">Show Details</button>
-                    <div class="project-details">
+                    <div class="project-details" hidden>
                             <p>Personal WordPress website.</p>
                         <div class="project-links">
                                 <a href="https://leungc.com" aria-label="WordPress site">
@@ -119,4 +119,11 @@
         <p>&copy; 2025 knmn</p>
     </footer>
 </body>
+<!-- Modal for details -->
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close details">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
 </html>
