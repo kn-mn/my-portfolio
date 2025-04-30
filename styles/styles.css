@@ -80,38 +80,42 @@ header {
 
 /* DARK MODE */
 body[data-theme="dark"] {
-    background: var(--bg-light);
-    color: var(--text-light);
-  }
+  background: var(--bg-light);
+  color: var(--text-light);
+}
 
 :root[data-theme="dark"] header, :root[data-theme="dark"] footer, :root[data-theme="dark"] .hero {
-    background: var(--bg-dark);
-    color: var(--text-light);
-  }
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
 
-  :root[data-theme="dark"] .btn {
-    background: var(--text-light);
-    color: var(--dark-color);
-  }
+:root[data-theme="dark"] .btn {
+  background: var(--text-light);
+  color: var(--dark-color);
+}
 
-  :root[data-theme="dark"] h1 {
-    color: var(--text-light);
-  }
-  :root[data-theme="dark"] h2 {
-    color: var(--text-light);
-  }
+:root[data-theme="dark"] h1 {
+  color: var(--text-light);
+}
+:root[data-theme="dark"] h2 {
+  color: var(--text-light);
+}
 
-  :root[data-theme="dark"] nav ul li a {
-    color: var(--text-light);
-  }
+:root[data-theme="dark"] nav ul li a {
+  color: var(--text-light);
+}
 
 :root[data-theme="dark"] #theme-toggle {
-    color: var(--text-light);
-  }
+  color: var(--text-light);
+}
 
-  :root[data-theme="dark"] #theme-toggle:hover {
-    color: var(--accent-color);
-  }
+:root[data-theme="dark"] #theme-toggle:hover {
+color: var(--accent-color);
+}
+
+:root[data-theme="dark"] a {
+  color: var(--text-light);
+}
 
 /* HERO / HEADER / NAV */
 #hero {
