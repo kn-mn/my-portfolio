@@ -38,7 +38,7 @@ modal.addEventListener('click', e => {
 const contactForm = document.getElementById('contactForm');
 
 
-// Form Validation
+// FORM VALIDATION
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -72,7 +72,7 @@ var typed = new Typed('#typed', {
 });
 
 
-// Navigation Bar Hamburger 
+// NAVIGATION BAR HAMBURGER
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('header nav');
 menuToggle.addEventListener('click', ()=> nav.classList.toggle('open'));
@@ -86,7 +86,7 @@ document.querySelectorAll('header nav a').forEach(link => {
   });
 });
 
-// 
+// CHECKLIST FILTERING PROJCETS
 const techCheckboxes = document.querySelectorAll('.filter-container input[type="checkbox"]');
 const projects = document.querySelectorAll('.project');
 
