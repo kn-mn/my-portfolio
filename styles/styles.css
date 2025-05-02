@@ -185,7 +185,7 @@ footer {
     display: none;
   }
 
-/* DEVICE AND BROWSER SIZING */
+/* MEDIA QUERY */
 @media (max-width: 600px) {
     nav {
       display: none;
@@ -338,11 +338,14 @@ button, .project-toggle {
 }
 
 /* CONTACT FORM */
+#contactForm {
+  min-width: 500px;
+}
+
 #contact form {
     background-color: var(--light-color);
     padding: 20px;
     margin: 20px auto;
-    max-width: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
