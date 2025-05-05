@@ -17,8 +17,8 @@ themeToggle.addEventListener('click', () => {
 });
 
 // PROJECT MODALS
-const modal      = document.getElementById('project-modal');
-const modalBody  = document.getElementById('modal-body');
+const modal = document.getElementById('project-modal');
+const modalBody = document.getElementById('modal-body');
 const modalClose = modal.querySelector('.modal-close');
 
 document.querySelectorAll('.project-toggle').forEach(btn => {
